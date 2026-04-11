@@ -1,0 +1,44 @@
+# Install PyTorch separately (GPU wheel) before this file:
+#   pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu126
+# Then install these:
+#   pip install -r requirements.txt
+
+# API server
+fastapi==0.135.1
+uvicorn[standard]==0.41.0
+pydantic==2.12.5
+
+# Geometry / slicing helpers
+trimesh==4.11.2
+numpy==2.3.5
+scipy==1.17.1
+scikit-image==0.26.0
+matplotlib==3.10.8
+pillow==12.1.1
+
+# Shap-E runtime deps
+blobfile==3.2.0
+filelock==3.20.0
+fire==0.7.1
+humanize==4.15.0
+requests==2.32.5
+tqdm==4.67.3
+PyYAML==6.0.3
+lxml==6.0.2
+pycryptodomex==3.23.0
+clip @ git+https://github.com/openai/CLIP.git@ded190a052fdf4585bd685cee5bc96e0310d2c93
+
+# Hunyuan image-to-3D deps
+einops==0.8.2
+opencv-python==4.13.0.92
+pymeshlab==2025.7.post1
+diffusers>=0.35.0
+transformers>=4.46.0
+accelerate>=1.0.0
+huggingface_hub>=0.25.0
+tiktoken>=0.9.0
+sentencepiece>=0.2.0
+
+# Bambu LAN / MQTT
+bambulabs_api==2.4.3
+paho-mqtt==2.1.0

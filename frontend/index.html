@@ -1,0 +1,542 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Bridge PrintMind Studio">
+<title>Bridge PrintMind Studio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/static/styles.css?v=20260330g">
+</head>
+<body>
+  <div class="app-shell">
+
+    <header class="topbar">
+      <div class="brand">
+        <img src="/static/assets/bridge.png" alt="Bridge logo" class="brand-logo">
+        <div class="brand-copy">
+          <p class="eyebrow">EDGE GROUP UAE</p>
+          <h1>PrintMind <span class="brand-accent">Studio</span></h1>
+          <p class="brand-byline">by Haroon Siddiqui</p>
+        </div>
+      </div>
+
+      <div class="header-right">
+        <div class="status-pills">
+          <div class="status-pill" id="healthPill">
+            <span class="pill-dot"></span>
+            <span>Model service standby</span>
+          </div>
+          <div class="status-pill" id="queuePill">
+            <span class="pill-dot"></span>
+            <span>Queue idle</span>
+          </div>
+          <div class="status-pill status-pill--clock" id="clockPill">--:--</div>
+        </div>
+        <button type="button" class="theme-toggle" id="themeToggle" title="Toggle dark/light mode" aria-label="Toggle dark/light mode">
+          <span class="icon-moon" aria-hidden="true">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          </span>
+          <span class="icon-sun" aria-hidden="true">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          </span>
+        </button>
+      </div>
+    </header>
+
+    <main class="workspace">
+
+      <!-- ── CREATE ───────────────────────────────────────────── -->
+      <section class="card create-card">
+        <div class="card-head">
+          <div class="card-head-label">
+            <span class="panel-num">01</span>
+            <div>
+              <p class="eyebrow">Create</p>
+              <h2>Describe your object.</h2>
+            </div>
+          </div>
+        </div>
+
+        <div class="mode-switch">
+          <button type="button" class="mode-btn is-active" data-mode="text">Describe</button>
+          <button type="button" class="mode-btn" data-mode="image">Upload</button>
+          <button type="button" class="mode-btn" data-mode="gallery">Inspire</button>
+          <button type="button" class="mode-btn mode-btn--template" data-mode="keychain">Keychain</button>
+        </div>
+
+        <div class="preset-strip" id="presetStrip">
+          <button type="button" class="preset-btn" data-preset="fast">Fast</button>
+          <button type="button" class="preset-btn is-active" data-preset="balanced">Balanced</button>
+          <button type="button" class="preset-btn" data-preset="quality">Quality</button>
+        </div>
+
+        <div class="create-scroll">
+          <div class="mode-panel is-active" id="modeTextPanel">
+            <label class="field-label" for="promptInput">What do you want to make?</label>
+            <textarea id="promptInput" class="prompt-input" maxlength="320" placeholder="A premium incense holder with a low center of gravity, hidden ash channel, soft radii, and a refined architectural silhouette."></textarea>
+            <div class="field-meta">
+              <span class="char-count" id="charCount">0 / 320</span>
+              <span class="micro-badge" id="microMode">Text brief</span>
+            </div>
+
+            <div class="starter-block">
+              <div class="starter-head">
+                <span class="eyebrow">Quick starters</span>
+                <span class="helper-copy">Tap to seed the brief.</span>
+              </div>
+              <div class="recipe-rack" id="recipeRack"></div>
+            </div>
+          </div>
+
+          <div class="mode-panel" id="modeImagePanel" hidden>
+            <label class="field-label">Reference image</label>
+            <button type="button" class="dropzone" id="imageDropzone">
+              <span class="dropzone-icon">+</span>
+              <span class="dropzone-title">Tap or drop an image</span>
+              <span class="dropzone-copy">Clean object photo on a simple background.</span>
+            </button>
+            <div class="secondary-actions">
+              <button type="button" class="ghost-btn" id="cameraCaptureBtn">Use camera</button>
+            </div>
+          </div>
+
+          <div class="mode-panel" id="modeGalleryPanel" hidden>
+            <div class="gallery-panel-head">
+              <label class="field-label">Inspiration library</label>
+              <span class="helper-copy">Use image to generate from photo. Use brief to load text.</span>
+            </div>
+            <div class="gallery-filters" id="galleryFilters"></div>
+            <div class="gallery-list" id="galleryRail"></div>
+          </div>
+
+          <div class="mode-panel" id="modeKeychainPanel" hidden>
+            <div class="template-panel">
+              <div class="template-panel-head">
+                <label class="field-label" for="keychainNameInput">Bridge keychain</label>
+                <span class="helper-copy">Front stays fixed. The back name is rebuilt from the production template.</span>
+              </div>
+              <label class="input-field template-input-field">
+                <span class="field-label">Name</span>
+                <input id="keychainNameInput" class="text-input template-name-input" type="text" maxlength="21" placeholder="Haroon" autocomplete="off" spellcheck="false">
+              </label>
+              <div class="field-meta">
+                <span class="char-count" id="keychainCharCount">0 / 21</span>
+                <span class="micro-badge">1–2 words</span>
+              </div>
+              <div class="keychain-color-row" style="display:none" aria-hidden="true">
+                <span class="field-label" style="margin-bottom:0">Name colour</span>
+                <div class="keychain-swatches" id="keychainSwatches"></div>
+              </div>
+              <div class="template-facts" id="templateFacts">
+                <div class="template-fact">
+                  <span class="micro-label">Template</span>
+                  <strong>3-color keychain</strong>
+                </div>
+                <div class="template-fact">
+                  <span class="micro-label">Front</span>
+                  <strong>BRIDGE fixed</strong>
+                </div>
+                <div class="template-fact">
+                  <span class="micro-label">Back</span>
+                  <strong>Custom name</strong>
+                </div>
+                <div class="template-fact">
+                  <span class="micro-label">Limit</span>
+                  <strong>1 word, 7 chars</strong>
+                </div>
+              </div>
+              <p class="field-note">This is a deterministic template flow for the event. No AI generation is used here.</p>
+            </div>
+          </div>
+
+          <div class="source-preview" id="sourcePreview" hidden>
+            <img id="sourcePreviewImage" alt="Reference preview">
+            <div class="source-copy">
+              <strong id="sourcePreviewTitle">Reference ready</strong>
+              <span id="sourcePreviewMeta">No source selected.</span>
+            </div>
+            <button type="button" class="icon-btn" id="clearSourceBtn" title="Clear">Clear</button>
+          </div>
+        </div>
+
+        <div class="create-footer">
+          <div class="footer-meta">
+            <div class="footer-meta-item">
+              <span class="micro-label">Preset</span>
+              <strong id="microPreset">Balanced</strong>
+            </div>
+            <div class="footer-meta-item">
+              <span class="micro-label">Source</span>
+              <strong id="sourceSummary">Text-only</strong>
+            </div>
+          </div>
+          <div class="footer-actions">
+            <button type="button" class="ghost-btn" id="cancelBtn" disabled>Cancel</button>
+            <button type="button" class="primary-btn generate-btn" id="generateBtn">
+              Generate model
+            </button>
+          </div>
+        </div>
+
+        <input id="imageUploadInput" type="file" accept="image/*" hidden>
+        <input id="cameraInput" type="file" accept="image/*" capture="environment" hidden>
+      </section>
+
+      <!-- ── PREVIEW ──────────────────────────────────────────── -->
+      <section class="card stage-card" id="previewStageCard">
+        <div class="card-head">
+          <div class="card-head-label">
+            <span class="panel-num">02</span>
+            <div>
+              <p class="eyebrow">Preview</p>
+              <h2 id="viewerTitle">Model stage.</h2>
+            </div>
+          </div>
+          <div class="stage-tools">
+            <span class="stage-readiness" id="microReadiness">Awaiting model</span>
+            <div class="viewer-mode-switch" id="viewerModeSwitch">
+              <button type="button" class="chip-btn viewer-mode-btn is-active" id="viewer3dBtn">3D</button>
+              <button type="button" class="chip-btn viewer-mode-btn" id="viewerPlateBtn">Plate</button>
+              <button type="button" class="ghost-btn viewer-expand-btn" id="viewerFullscreenBtn">Expand</button>
+            </div>
+            <div class="export-wrap">
+              <button type="button" class="ghost-btn" id="exportMenuBtn" disabled>Export</button>
+              <div class="export-menu" id="exportMenu" hidden>
+                <button type="button" class="export-option" id="exportStlBtn">Download STL</button>
+                <button type="button" class="export-option" id="exportObjBtn">Download OBJ</button>
+                <button type="button" class="export-option" id="export3mfBtn">Download 3MF</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="stage-status-bar">
+          <span id="statusLine">System ready. Start with a prompt, image, or inspiration.</span>
+        </div>
+        <button
+          type="button"
+          class="popup-close-btn stage-popup-close"
+          id="previewOverlayCloseBtn"
+          title="Close preview"
+          aria-label="Close preview"
+          hidden
+        >X</button>
+
+        <div class="viewer-frame" id="viewerFrame">
+
+            <!-- ── 3D Rotating model preview ── -->
+            <div class="viewer-main is-active" id="viewerMain">
+              <div class="viewer-canvas" id="viewer"></div>
+
+              <div class="template-stage" id="templateStage" hidden>
+                <div class="template-stage-bar">
+                  <span class="template-stage-note" id="templateStageNote">Keychain view. Drag to inspect.</span>
+                  <div class="template-stage-actions">
+                    <button type="button" class="chip-btn template-view-btn is-active" id="keychainFrontBtn">Front</button>
+                    <button type="button" class="chip-btn template-view-btn" id="keychainBackBtn">Back</button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="viewer-empty" id="viewerEmpty">
+                <div class="viewer-empty-inner">
+                  <div class="viewer-empty-icon">PM</div>
+                  <h3>Preview, inspect,<br>and export.</h3>
+                  <p>Generate a model to see it here.</p>
+                </div>
+              </div>
+
+              <div class="progress-panel" id="progressDock" hidden>
+                <div class="progress-header">
+                  <div>
+                    <p class="eyebrow" style="color:rgba(255,255,255,0.38)">Generating</p>
+                    <h3 id="progressStage">Preparing</h3>
+                  </div>
+                  <span class="progress-message" id="progressMessage">Waiting for updates...</span>
+                </div>
+                <div class="progress-stack">
+                  <div class="progress-row">
+                    <div class="progress-labels">
+                      <span>Prep</span>
+                      <span class="mono" id="progressPrepValue">0%</span>
+                    </div>
+                    <div class="progress-track"><span id="progressPrepFill"></span></div>
+                  </div>
+                  <div class="progress-row">
+                    <div class="progress-labels">
+                      <span>Diffusion</span>
+                      <span class="mono" id="progressDiffusionValue">0%</span>
+                    </div>
+                    <div class="progress-track"><span id="progressDiffusionFill"></span></div>
+                  </div>
+                  <div class="progress-row">
+                    <div class="progress-labels">
+                      <span>Decode</span>
+                      <span class="mono" id="progressDecodeValue">0%</span>
+                    </div>
+                    <div class="progress-track"><span id="progressDecodeFill"></span></div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Overlay tab shown when 3D view is in the collapsed narrow strip -->
+            </div>
+
+            <!-- ── Print plate 3D preview ── -->
+            <div class="viewer-bed-pane" id="viewerBedPane">
+
+              <!-- Narrow tab strip — always 52 px, click to expand/collapse -->
+
+              <!-- Expanded body — fades in once pane is open -->
+              <div class="bed-pane-body" id="bedPaneBody">
+                <div class="bed-pane-head">
+                  <div class="bed-view-switch" id="bedViewSwitch">
+                    <button type="button" class="chip-btn bed-view-btn is-active" id="bedFocusBtn">Focus</button>
+                    <button type="button" class="chip-btn bed-view-btn" id="bedFullBtn">Full bed</button>
+                  </div>
+                  <span class="eyebrow" style="color:rgba(255,255,255,0.45)">Bambu X1C · 256 × 256 mm</span>
+                  <span class="bed-pane-subtitle">Textured PEI · drag to orbit</span>
+                </div>
+                <div class="bed-canvas-wrap" id="bedCanvasWrap">
+                  <canvas id="bedPreviewCanvas" class="bed-preview-canvas" width="512" height="512" title="Build plate preview"></canvas>
+                </div>
+                <div class="bed-pane-info" id="bedPaneInfo">No model loaded</div>
+              </div>
+
+            </div>
+        </div>
+
+        <div class="result-grid">
+          <article class="result-card">
+            <span class="micro-label">Gen time</span>
+            <strong class="mono" id="resultSeconds">--</strong>
+          </article>
+          <article class="result-card">
+            <span class="micro-label">Mesh faces</span>
+            <strong class="mono" id="resultFaces">--</strong>
+          </article>
+          <article class="result-card">
+            <span class="micro-label">Bounding box</span>
+            <strong class="mono" id="resultDimensions">--</strong>
+          </article>
+          <article class="result-card">
+            <span class="micro-label">Engine</span>
+            <strong class="mono" id="resultEngine">--</strong>
+          </article>
+        </div>
+      </section>
+
+      <!-- ── PRINT ─────────────────────────────────────────────── -->
+      <section class="card print-card">
+        <div class="card-head">
+          <div class="card-head-label">
+            <span class="panel-num">03</span>
+            <div>
+              <p class="eyebrow">Print</p>
+              <h2>Send to production.</h2>
+            </div>
+          </div>
+          <button type="button" class="icon-btn" id="refreshSnapshotBtn" title="Refresh">Refresh</button>
+        </div>
+
+        <div class="print-scroll">
+
+          <div class="printer-block">
+            <div class="section-head"><span class="eyebrow">Active printer</span></div>
+            <select id="printerSelect" class="select-input"></select>
+
+            <div class="printer-grid">
+              <article class="printer-card printer-card--wide">
+                <span class="micro-label">Job</span>
+                <strong id="printerJob">--</strong>
+              </article>
+              <article class="printer-card">
+                <span class="micro-label">Stage</span>
+                <strong id="printerStage">Unknown</strong>
+              </article>
+              <article class="printer-card">
+                <span class="micro-label">Progress</span>
+                <strong class="mono" id="printerProgress">0%</strong>
+              </article>
+              <article class="printer-card">
+                <span class="micro-label">Nozzle / Bed</span>
+                <strong class="mono" id="printerTemps">-- / --</strong>
+              </article>
+              <article class="printer-card">
+                <span class="micro-label">Time left</span>
+                <strong class="mono" id="printerRemaining">--</strong>
+              </article>
+            </div>
+
+            <div class="ams-rail" id="amsTrayRail"></div>
+
+            <div class="printer-actions">
+              <button type="button" class="ghost-btn" id="resumeBtn">Resume</button>
+              <button type="button" class="ghost-btn danger-btn" id="stopBtn">Stop</button>
+            </div>
+
+            <div class="hint-box" id="printerHint">Polling printer state.</div>
+            <div class="timeline-list" id="printerTimeline"></div>
+          </div>
+
+          <div class="settings-block">
+            <div class="section-head"><span class="eyebrow">Print settings</span></div>
+
+            <div class="setting-row">
+              <span class="field-label">Purpose</span>
+              <div class="chip-group" id="intentGroup">
+                <button type="button" class="chip-btn is-active" data-intent="balanced">Balanced</button>
+                <button type="button" class="chip-btn" data-intent="decorative">Decor</button>
+                <button type="button" class="chip-btn" data-intent="durable">Durable</button>
+              </div>
+            </div>
+
+            <div class="setting-row" id="sizeSettingRow">
+              <span class="field-label">Target size</span>
+              <input type="range" id="sizeRange" min="35" max="160" step="1" value="70">
+              <div class="field-meta">
+                <span class="mono" id="sizeReadout">70 mm</span>
+                <span class="mono" id="scaleReadout">100%</span>
+              </div>
+              <div class="chip-group">
+                <button type="button" class="chip-btn" data-size="small">Small</button>
+                <button type="button" class="chip-btn is-active" data-size="medium">Medium</button>
+                <button type="button" class="chip-btn" data-size="large">Large</button>
+              </div>
+            </div>
+
+            <div class="setting-row" id="supportSettingRow">
+              <span class="field-label">Support strategy</span>
+              <div class="chip-group" id="supportGroup">
+                <button type="button" class="chip-btn is-active" data-support="auto">Auto</button>
+                <button type="button" class="chip-btn" data-support="on">On</button>
+                <button type="button" class="chip-btn" data-support="off">Off</button>
+              </div>
+            </div>
+
+            <div class="template-print-lock-note" id="templatePrintLockNote" hidden>
+              Bridge keychain keeps its production size and orientation from the template. Use purpose, tray selection, and dispatch controls here.
+            </div>
+
+            <div class="toggle-grid">
+              <label class="toggle-pill">
+                <input type="checkbox" id="autoStartToggle">
+                <span class="toggle-track"><span class="toggle-thumb"></span></span>
+                <span>Auto start</span>
+              </label>
+              <label class="toggle-pill">
+                <input type="checkbox" id="useAmsToggle" checked>
+                <span class="toggle-track"><span class="toggle-thumb"></span></span>
+                <span>Use AMS</span>
+              </label>
+            </div>
+
+            <div class="input-grid">
+              <label class="input-field">
+                <span class="field-label">AMS slot</span>
+                <select id="amsSlotSelect" class="select-input">
+                  <option value="">Auto / default</option>
+                </select>
+              </label>
+              <label class="input-field">
+                <span class="field-label">Job name</span>
+                <input id="jobNameInput" class="text-input" type="text" placeholder="Optional job name">
+              </label>
+            </div>
+
+            <div class="print-actions">
+              <button type="button" class="ghost-btn sm-btn" id="estimateBtn">Estimate</button>
+              <button type="button" class="ghost-btn sm-btn" id="preflightBtn">Preflight</button>
+              <button type="button" class="ghost-btn sm-btn" id="queueBtn">Queue</button>
+              <button type="button" class="primary-btn print-main-btn" id="printBtn" disabled>Prepare job</button>
+            </div>
+
+            <div class="summary-box" id="manufactureSummary" data-tone="neutral" aria-live="polite">No estimate yet. Generate a model first.</div>
+          </div>
+
+          <div class="ops-block">
+            <div class="section-head"><span class="eyebrow">Performance</span></div>
+            <div class="mini-perf-grid">
+              <article class="mini-card">
+                <span class="micro-label">Last run</span>
+                <strong class="mono" id="perfTotal">--</strong>
+              </article>
+              <article class="mini-card">
+                <span class="micro-label">Sampling</span>
+                <strong class="mono" id="perfSampling">--</strong>
+              </article>
+              <article class="mini-card">
+                <span class="micro-label">Decode</span>
+                <strong class="mono" id="perfDecode">--</strong>
+              </article>
+              <article class="mini-card">
+                <span class="micro-label">Last output</span>
+                <strong id="microOutput">No STL yet</strong>
+              </article>
+            </div>
+
+            <div class="queue-panel">
+              <div class="section-head"><span class="eyebrow">Job queue</span></div>
+              <div class="queue-list" id="queueList">
+                <div class="queue-empty">Queue is empty.</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <div class="toast" id="toast" hidden></div>
+  <div class="review-overlay" id="printReviewOverlay" hidden>
+    <div class="review-sheet" role="dialog" aria-modal="true" aria-labelledby="printReviewTitle">
+      <div class="review-head">
+        <div>
+          <p class="eyebrow">Final review</p>
+          <h3 id="printReviewTitle">Review print job.</h3>
+        </div>
+        <button
+          type="button"
+          class="popup-close-btn"
+          id="printReviewCloseBtn"
+          title="Close review"
+          aria-label="Close review"
+        >X</button>
+      </div>
+      <div class="review-body">
+        <div class="review-preview-card">
+          <div class="review-preview-frame" id="printReviewPreviewFrame">
+            <img id="printReviewPreviewImage" alt="Print preview">
+            <div class="review-preview-fallback" id="printReviewPreviewFallback">Preview unavailable</div>
+          </div>
+          <div class="review-preview-caption" id="printReviewPreviewCaption">Prepared bed view</div>
+        </div>
+        <div class="review-copy">
+          <p class="review-lead" id="printReviewLead">Review the printer, settings, and filament plan before dispatch.</p>
+          <div class="review-grid" id="printReviewGrid"></div>
+          <div class="review-block">
+            <div class="review-block-head">
+              <span class="eyebrow">Filaments</span>
+              <span class="review-block-note" id="printReviewFilamentNote">Live AMS mapping</span>
+            </div>
+            <div class="review-filament-list" id="printReviewFilaments"></div>
+          </div>
+          <div class="review-note" id="printReviewNote"></div>
+        </div>
+      </div>
+      <div class="review-actions">
+        <button type="button" class="ghost-btn" id="printReviewBackBtn">Back</button>
+        <button type="button" class="primary-btn" id="printReviewConfirmBtn">Prepare job</button>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="/static/app.js?v=20260330g"></script>
+</body>
+</html>

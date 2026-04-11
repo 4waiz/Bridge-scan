@@ -1,0 +1,642 @@
+[
+  {
+    "category": "home_objects",
+    "title": "Phone Stand",
+    "detail": "Clean minimalist phone holder",
+    "image_url": "/static/assets/inspiration/home_objects/home_objects_01.jpg",
+    "source_url": "",
+    "source_title": "AI generated product reference"
+  },
+  {
+    "category": "home_objects",
+    "title": "Ceramic Vase",
+    "detail": "Simple vase for flowers or decor",
+    "image_url": "/static/assets/inspiration/home_objects/home_objects_02.jpg",
+    "source_url": "",
+    "source_title": "AI generated product reference"
+  },
+  {
+    "category": "home_objects",
+    "title": "Small Planter",
+    "detail": "Geometric desk planter with drainage",
+    "image_url": "/static/assets/inspiration/home_objects/home_objects_03.jpg",
+    "source_url": "",
+    "source_title": "AI generated product reference"
+  },
+  {
+    "category": "home_objects",
+    "title": "Soap Dish",
+    "detail": "Slotted soap dish with drainage channels",
+    "image_url": "/static/assets/inspiration/home_objects/home_objects_04.jpg",
+    "source_url": "",
+    "source_title": "AI generated product reference"
+  },
+  {
+    "category": "home_objects",
+    "title": "Desk Tray",
+    "detail": "Flat catch-all organizer tray",
+    "image_url": "/static/assets/inspiration/home_objects/home_objects_05.jpg",
+    "source_url": "",
+    "source_title": "AI generated product reference"
+  },
+  {
+    "category": "home_objects",
+    "title": "Bookend",
+    "detail": "Minimal L-bracket style bookend",
+    "image_url": "/static/assets/inspiration/home_objects/home_objects_06.jpg",
+    "source_url": "",
+    "source_title": "AI generated product reference"
+  },
+  {
+    "category": "home_objects",
+    "title": "Candle Holder",
+    "detail": "Cylindrical pillar candle holder",
+    "image_url": "/static/assets/inspiration/home_objects/home_objects_07.jpg",
+    "source_url": "",
+    "source_title": "AI generated product reference"
+  },
+  {
+    "category": "home_objects",
+    "title": "Pen Cup",
+    "detail": "Desktop pen and pencil cup",
+    "image_url": "/static/assets/inspiration/home_objects/home_objects_08.jpg",
+    "source_url": "",
+    "source_title": "AI generated product reference"
+  },
+  {
+    "category": "home_objects",
+    "title": "Coaster",
+    "detail": "Hexagonal textured drink coaster",
+    "image_url": "/static/assets/inspiration/home_objects/home_objects_09.jpg",
+    "source_url": "",
+    "source_title": "AI generated product reference"
+  },
+  {
+    "category": "home_objects",
+    "title": "Cable Clip",
+    "detail": "Snap-on desk cable management clip",
+    "image_url": "/static/assets/inspiration/home_objects/home_objects_10.jpg",
+    "source_url": "",
+    "source_title": "AI generated product reference"
+  },
+  {
+    "category": "automotive_parts",
+    "title": "Gear Knob",
+    "detail": "Custom aftermarket shift knob",
+    "image_url": "/static/assets/inspiration/automotive_parts/automotive_parts_01.jpg",
+    "source_url": "",
+    "source_title": "AI generated product reference"
+  },
+  {
+    "category": "automotive_parts",
+    "title": "Phone Mount",
+    "detail": "Car air vent phone holder",
+    "image_url": "/static/assets/inspiration/automotive_parts/automotive_parts_02.jpg",
+    "source_url": "",
+    "source_title": "AI generated product reference"
+  },
+  {
+    "category": "automotive_parts",
+    "title": "Cup Holder Insert",
+    "detail": "Organizer insert for cup holder",
+    "image_url": "/static/assets/inspiration/automotive_parts/automotive_parts_03.jpg",
+    "source_url": "",
+    "source_title": "AI generated product reference"
+  },
+  {
+    "category": "automotive_parts",
+    "title": "Key Fob Case",
+    "detail": "Protective silicone key fob cover",
+    "image_url": "/static/assets/inspiration/automotive_parts/automotive_parts_04.jpg",
+    "source_url": "",
+    "source_title": "AI generated product reference"
+  },
+  {
+    "category": "automotive_parts",
+    "title": "Vent Clip",
+    "detail": "Air freshener vent clip holder",
+    "image_url": "/static/assets/inspiration/automotive_parts/automotive_parts_05.jpg",
+    "source_url": "",
+    "source_title": "AI generated product reference"
+  },
+  {
+    "category": "automotive_parts",
+    "title": "Dashboard Clip",
+    "detail": "Cable routing dashboard clip",
+    "image_url": "/static/assets/inspiration/automotive_parts/automotive_parts_06.jpg",
+    "source_url": "",
+    "source_title": "AI generated product reference"
+  },
+  {
+    "category": "automotive_parts",
+    "title": "Console Divider",
+    "detail": "Modular center console organizer",
+    "image_url": "/static/assets/inspiration/automotive_parts/automotive_parts_07.jpg",
+    "source_url": "",
+    "source_title": "AI generated product reference"
+  },
+  {
+    "category": "automotive_parts",
+    "title": "Headrest Hook",
+    "detail": "Bag hook for rear headrest",
+    "image_url": "/static/assets/inspiration/automotive_parts/automotive_parts_08.jpg",
+    "source_url": "",
+    "source_title": "AI generated product reference"
+  },
+  {
+    "category": "automotive_parts",
+    "title": "Charging Tray",
+    "detail": "Dashboard wireless charging tray",
+    "image_url": "/static/assets/inspiration/automotive_parts/automotive_parts_09.jpg",
+    "source_url": "",
+    "source_title": "AI generated product reference"
+  },
+  {
+    "category": "automotive_parts",
+    "title": "Visor Clip",
+    "detail": "Sun visor card and ticket holder",
+    "image_url": "/static/assets/inspiration/automotive_parts/automotive_parts_10.jpg",
+    "source_url": "",
+    "source_title": "AI generated product reference"
+  },
+  {
+    "category": "cosmetics_packaging",
+    "title": "Perfume Bottle",
+    "detail": "Elegant faceted perfume bottle",
+    "image_url": "/static/assets/inspiration/cosmetics_packaging/cosmetics_packaging_01.jpg",
+    "source_url": "",
+    "source_title": "AI generated product reference"
+  },
+  {
+    "category": "cosmetics_packaging",
+    "title": "Lipstick Case",
+    "detail": "Cylindrical metallic lipstick case",
+    "image_url": "/static/assets/inspiration/cosmetics_packaging/cosmetics_packaging_02.jpg",
+    "source_url": "",
+    "source_title": "AI generated product reference"
+  },
+  {
+    "category": "cosmetics_packaging",
+    "title": "Brush Holder",
+    "detail": "Makeup brush organizer stand",
+    "image_url": "/static/assets/inspiration/cosmetics_packaging/cosmetics_packaging_03.jpg",
+    "source_url": "",
+    "source_title": "AI generated product reference"
+  },
+  {
+    "category": "cosmetics_packaging",
+    "title": "Cream Jar",
+    "detail": "Face cream jar with lid",
+    "image_url": "/static/assets/inspiration/cosmetics_packaging/cosmetics_packaging_04.jpg",
+    "source_url": "",
+    "source_title": "AI generated product reference"
+  },
+  {
+    "category": "cosmetics_packaging",
+    "title": "Nail Polish Bottle",
+    "detail": "Small nail polish glass bottle",
+    "image_url": "/static/assets/inspiration/cosmetics_packaging/cosmetics_packaging_05.jpg",
+    "source_url": "",
+    "source_title": "AI generated product reference"
+  },
+  {
+    "category": "cosmetics_packaging",
+    "title": "Dropper Bottle",
+    "detail": "Glass serum dropper bottle",
+    "image_url": "/static/assets/inspiration/cosmetics_packaging/cosmetics_packaging_06.jpg",
+    "source_url": "",
+    "source_title": "AI generated product reference"
+  },
+  {
+    "category": "cosmetics_packaging",
+    "title": "Compact Mirror",
+    "detail": "Round clamshell compact mirror",
+    "image_url": "/static/assets/inspiration/cosmetics_packaging/cosmetics_packaging_07.jpg",
+    "source_url": "",
+    "source_title": "AI generated product reference"
+  },
+  {
+    "category": "cosmetics_packaging",
+    "title": "Lotion Pump",
+    "detail": "Minimalist lotion pump bottle",
+    "image_url": "/static/assets/inspiration/cosmetics_packaging/cosmetics_packaging_08.jpg",
+    "source_url": "",
+    "source_title": "AI generated product reference"
+  },
+  {
+    "category": "cosmetics_packaging",
+    "title": "Soap Dispenser",
+    "detail": "Ceramic liquid soap dispenser",
+    "image_url": "/static/assets/inspiration/cosmetics_packaging/cosmetics_packaging_09.jpg",
+    "source_url": "",
+    "source_title": "AI generated product reference"
+  },
+  {
+    "category": "cosmetics_packaging",
+    "title": "Storage Cup",
+    "detail": "Small cosmetics organizer cup",
+    "image_url": "/static/assets/inspiration/cosmetics_packaging/cosmetics_packaging_10.jpg",
+    "source_url": "",
+    "source_title": "AI generated product reference"
+  },
+  {
+    "category": "desk_accessories",
+    "title": "Headphone Stand",
+    "detail": "Minimal aluminum headphone stand",
+    "image_url": "/static/assets/inspiration/desk_accessories/desk_accessories_01.jpg",
+    "source_url": "",
+    "source_title": "AI generated product reference"
+  },
+  {
+    "category": "desk_accessories",
+    "title": "Cable Organizer",
+    "detail": "Desk cable management bar",
+    "image_url": "/static/assets/inspiration/desk_accessories/desk_accessories_02.jpg",
+    "source_url": "",
+    "source_title": "AI generated product reference"
+  },
+  {
+    "category": "desk_accessories",
+    "title": "Pen Holder",
+    "detail": "Geometric concrete pen holder",
+    "image_url": "/static/assets/inspiration/desk_accessories/desk_accessories_03.jpg",
+    "source_url": "",
+    "source_title": "AI generated product reference"
+  },
+  {
+    "category": "desk_accessories",
+    "title": "Phone Dock",
+    "detail": "Angled wireless phone charging dock",
+    "image_url": "/static/assets/inspiration/desk_accessories/desk_accessories_04.jpg",
+    "source_url": "",
+    "source_title": "AI generated product reference"
+  },
+  {
+    "category": "desk_accessories",
+    "title": "Card Holder",
+    "detail": "Desktop business card display stand",
+    "image_url": "/static/assets/inspiration/desk_accessories/desk_accessories_05.jpg",
+    "source_url": "",
+    "source_title": "AI generated product reference"
+  },
+  {
+    "category": "desk_accessories",
+    "title": "Monitor Riser",
+    "detail": "Wooden monitor stand riser",
+    "image_url": "/static/assets/inspiration/desk_accessories/desk_accessories_06.jpg",
+    "source_url": "",
+    "source_title": "AI generated product reference"
+  },
+  {
+    "category": "desk_accessories",
+    "title": "Catch-All Tray",
+    "detail": "Leather-look desk catch-all tray",
+    "image_url": "/static/assets/inspiration/desk_accessories/desk_accessories_07.jpg",
+    "source_url": "",
+    "source_title": "AI generated product reference"
+  },
+  {
+    "category": "desk_accessories",
+    "title": "USB Hub Dock",
+    "detail": "Compact USB hub shell",
+    "image_url": "/static/assets/inspiration/desk_accessories/desk_accessories_08.jpg",
+    "source_url": "",
+    "source_title": "AI generated product reference"
+  },
+  {
+    "category": "desk_accessories",
+    "title": "Sticky Note Holder",
+    "detail": "Weighted sticky note block holder",
+    "image_url": "/static/assets/inspiration/desk_accessories/desk_accessories_09.jpg",
+    "source_url": "",
+    "source_title": "AI generated product reference"
+  },
+  {
+    "category": "desk_accessories",
+    "title": "Mini Shelf",
+    "detail": "Small desk shelf riser tier",
+    "image_url": "/static/assets/inspiration/desk_accessories/desk_accessories_10.jpg",
+    "source_url": "",
+    "source_title": "AI generated product reference"
+  },
+  {
+    "category": "games_toys",
+    "title": "Dice Tower",
+    "detail": "Tabletop dice rolling tower",
+    "image_url": "/static/assets/inspiration/games_toys/games_toys_01.jpg",
+    "source_url": "",
+    "source_title": "AI generated product reference"
+  },
+  {
+    "category": "games_toys",
+    "title": "Chess Pawn",
+    "detail": "Classic marble chess pawn piece",
+    "image_url": "/static/assets/inspiration/games_toys/games_toys_02.jpg",
+    "source_url": "",
+    "source_title": "AI generated product reference"
+  },
+  {
+    "category": "games_toys",
+    "title": "Mini Figure",
+    "detail": "Tabletop game miniature figure",
+    "image_url": "/static/assets/inspiration/games_toys/games_toys_03.jpg",
+    "source_url": "",
+    "source_title": "AI generated product reference"
+  },
+  {
+    "category": "games_toys",
+    "title": "Game Token",
+    "detail": "Flat circular game token",
+    "image_url": "/static/assets/inspiration/games_toys/games_toys_04.jpg",
+    "source_url": "",
+    "source_title": "AI generated product reference"
+  },
+  {
+    "category": "games_toys",
+    "title": "Dice Tray",
+    "detail": "Felt-lined dice rolling tray",
+    "image_url": "/static/assets/inspiration/games_toys/games_toys_05.jpg",
+    "source_url": "",
+    "source_title": "AI generated product reference"
+  },
+  {
+    "category": "games_toys",
+    "title": "Card Stand",
+    "detail": "Playing card hand holder stand",
+    "image_url": "/static/assets/inspiration/games_toys/games_toys_06.jpg",
+    "source_url": "",
+    "source_title": "AI generated product reference"
+  },
+  {
+    "category": "games_toys",
+    "title": "Controller Stand",
+    "detail": "Game controller display stand",
+    "image_url": "/static/assets/inspiration/games_toys/games_toys_07.jpg",
+    "source_url": "",
+    "source_title": "AI generated product reference"
+  },
+  {
+    "category": "games_toys",
+    "title": "Board Game Insert",
+    "detail": "Custom board game box organizer",
+    "image_url": "/static/assets/inspiration/games_toys/games_toys_08.jpg",
+    "source_url": "",
+    "source_title": "AI generated product reference"
+  },
+  {
+    "category": "games_toys",
+    "title": "Meeple Piece",
+    "detail": "Wooden meeple game piece",
+    "image_url": "/static/assets/inspiration/games_toys/games_toys_09.jpg",
+    "source_url": "",
+    "source_title": "AI generated product reference"
+  },
+  {
+    "category": "games_toys",
+    "title": "Tabletop Tile",
+    "detail": "Hexagonal tabletop terrain tile",
+    "image_url": "/static/assets/inspiration/games_toys/games_toys_10.jpg",
+    "source_url": "",
+    "source_title": "AI generated product reference"
+  },
+  {
+    "category": "industrial_parts",
+    "title": "Spur Gear",
+    "detail": "Precision plastic spur gear",
+    "image_url": "/static/assets/inspiration/industrial_parts/industrial_parts_01.jpg",
+    "source_url": "",
+    "source_title": "AI generated product reference"
+  },
+  {
+    "category": "industrial_parts",
+    "title": "Hex Bolt Set",
+    "detail": "M8 hex bolt and nut",
+    "image_url": "/static/assets/inspiration/industrial_parts/industrial_parts_02.jpg",
+    "source_url": "",
+    "source_title": "AI generated product reference"
+  },
+  {
+    "category": "industrial_parts",
+    "title": "L-Bracket",
+    "detail": "Reinforced steel mounting bracket",
+    "image_url": "/static/assets/inspiration/industrial_parts/industrial_parts_03.jpg",
+    "source_url": "",
+    "source_title": "AI generated product reference"
+  },
+  {
+    "category": "industrial_parts",
+    "title": "Pipe Clamp",
+    "detail": "Split pipe clamp fitting",
+    "image_url": "/static/assets/inspiration/industrial_parts/industrial_parts_04.jpg",
+    "source_url": "",
+    "source_title": "AI generated product reference"
+  },
+  {
+    "category": "industrial_parts",
+    "title": "Pulley Wheel",
+    "detail": "Small guide pulley with bearing",
+    "image_url": "/static/assets/inspiration/industrial_parts/industrial_parts_05.jpg",
+    "source_url": "",
+    "source_title": "AI generated product reference"
+  },
+  {
+    "category": "industrial_parts",
+    "title": "Knurled Knob",
+    "detail": "Adjustment knob with grip texture",
+    "image_url": "/static/assets/inspiration/industrial_parts/industrial_parts_06.jpg",
+    "source_url": "",
+    "source_title": "AI generated product reference"
+  },
+  {
+    "category": "industrial_parts",
+    "title": "Cable Gland",
+    "detail": "Waterproof nylon cable gland",
+    "image_url": "/static/assets/inspiration/industrial_parts/industrial_parts_07.jpg",
+    "source_url": "",
+    "source_title": "AI generated product reference"
+  },
+  {
+    "category": "industrial_parts",
+    "title": "T-Slot Nut",
+    "detail": "Aluminum extrusion T-slot nut",
+    "image_url": "/static/assets/inspiration/industrial_parts/industrial_parts_08.jpg",
+    "source_url": "",
+    "source_title": "AI generated product reference"
+  },
+  {
+    "category": "industrial_parts",
+    "title": "Snap Clip",
+    "detail": "Plastic snap-fit assembly clip",
+    "image_url": "/static/assets/inspiration/industrial_parts/industrial_parts_09.jpg",
+    "source_url": "",
+    "source_title": "AI generated product reference"
+  },
+  {
+    "category": "industrial_parts",
+    "title": "Hinge",
+    "detail": "Small plastic living hinge",
+    "image_url": "/static/assets/inspiration/industrial_parts/industrial_parts_10.jpg",
+    "source_url": "",
+    "source_title": "AI generated product reference"
+  },
+  {
+    "category": "abstract_decor",
+    "title": "Wave Sculpture",
+    "detail": "Flowing frozen wave form",
+    "image_url": "/static/assets/inspiration/abstract_decor/abstract_decor_01.jpg",
+    "source_url": "",
+    "source_title": "AI generated product reference"
+  },
+  {
+    "category": "abstract_decor",
+    "title": "Twisted Column",
+    "detail": "Helix tower sculpture",
+    "image_url": "/static/assets/inspiration/abstract_decor/abstract_decor_02.jpg",
+    "source_url": "",
+    "source_title": "AI generated product reference"
+  },
+  {
+    "category": "abstract_decor",
+    "title": "Faceted Sphere",
+    "detail": "Geometric faceted sphere",
+    "image_url": "/static/assets/inspiration/abstract_decor/abstract_decor_03.jpg",
+    "source_url": "",
+    "source_title": "AI generated product reference"
+  },
+  {
+    "category": "abstract_decor",
+    "title": "Arc Sculpture",
+    "detail": "Minimal curved arch form",
+    "image_url": "/static/assets/inspiration/abstract_decor/abstract_decor_04.jpg",
+    "source_url": "",
+    "source_title": "AI generated product reference"
+  },
+  {
+    "category": "abstract_decor",
+    "title": "Pyramid Set",
+    "detail": "Nested geometric pyramids",
+    "image_url": "/static/assets/inspiration/abstract_decor/abstract_decor_05.jpg",
+    "source_url": "",
+    "source_title": "AI generated product reference"
+  },
+  {
+    "category": "abstract_decor",
+    "title": "Cube Tower",
+    "detail": "Stacked offset cube form",
+    "image_url": "/static/assets/inspiration/abstract_decor/abstract_decor_06.jpg",
+    "source_url": "",
+    "source_title": "AI generated product reference"
+  },
+  {
+    "category": "abstract_decor",
+    "title": "Torus Ring",
+    "detail": "Donut torus sculpture",
+    "image_url": "/static/assets/inspiration/abstract_decor/abstract_decor_07.jpg",
+    "source_url": "",
+    "source_title": "AI generated product reference"
+  },
+  {
+    "category": "abstract_decor",
+    "title": "Fluid Form",
+    "detail": "Organic flowing sculpture",
+    "image_url": "/static/assets/inspiration/abstract_decor/abstract_decor_08.jpg",
+    "source_url": "",
+    "source_title": "AI generated product reference"
+  },
+  {
+    "category": "abstract_decor",
+    "title": "Diamond Crystal",
+    "detail": "Cut crystal diamond form",
+    "image_url": "/static/assets/inspiration/abstract_decor/abstract_decor_09.jpg",
+    "source_url": "",
+    "source_title": "AI generated product reference"
+  },
+  {
+    "category": "abstract_decor",
+    "title": "Spiral Tower",
+    "detail": "Upward spiral decorative piece",
+    "image_url": "/static/assets/inspiration/abstract_decor/abstract_decor_10.jpg",
+    "source_url": "",
+    "source_title": "AI generated product reference"
+  },
+  {
+    "category": "architecture_models",
+    "title": "Modern House",
+    "detail": "Scale model of a modern house",
+    "image_url": "/static/assets/inspiration/architecture_models/architecture_models_01.jpg",
+    "source_url": "",
+    "source_title": "AI generated product reference"
+  },
+  {
+    "category": "architecture_models",
+    "title": "Column Capital",
+    "detail": "Classical Corinthian column capital",
+    "image_url": "/static/assets/inspiration/architecture_models/architecture_models_02.jpg",
+    "source_url": "",
+    "source_title": "AI generated product reference"
+  },
+  {
+    "category": "architecture_models",
+    "title": "Arch Bridge",
+    "detail": "Scale arch bridge model",
+    "image_url": "/static/assets/inspiration/architecture_models/architecture_models_03.jpg",
+    "source_url": "",
+    "source_title": "AI generated product reference"
+  },
+  {
+    "category": "architecture_models",
+    "title": "Dome Structure",
+    "detail": "Geodesic dome roof model",
+    "image_url": "/static/assets/inspiration/architecture_models/architecture_models_04.jpg",
+    "source_url": "",
+    "source_title": "AI generated product reference"
+  },
+  {
+    "category": "architecture_models",
+    "title": "Tower Block",
+    "detail": "Abstract tower building model",
+    "image_url": "/static/assets/inspiration/architecture_models/architecture_models_05.jpg",
+    "source_url": "",
+    "source_title": "AI generated product reference"
+  },
+  {
+    "category": "architecture_models",
+    "title": "Floor Plan Model",
+    "detail": "3D raised floor plan model",
+    "image_url": "/static/assets/inspiration/architecture_models/architecture_models_06.jpg",
+    "source_url": "",
+    "source_title": "AI generated product reference"
+  },
+  {
+    "category": "architecture_models",
+    "title": "Facade Detail",
+    "detail": "Building facade ornament piece",
+    "image_url": "/static/assets/inspiration/architecture_models/architecture_models_07.jpg",
+    "source_url": "",
+    "source_title": "AI generated product reference"
+  },
+  {
+    "category": "architecture_models",
+    "title": "Spiral Staircase",
+    "detail": "Scale spiral staircase model",
+    "image_url": "/static/assets/inspiration/architecture_models/architecture_models_08.jpg",
+    "source_url": "",
+    "source_title": "AI generated product reference"
+  },
+  {
+    "category": "architecture_models",
+    "title": "City Block",
+    "detail": "Urban city block miniature",
+    "image_url": "/static/assets/inspiration/architecture_models/architecture_models_09.jpg",
+    "source_url": "",
+    "source_title": "AI generated product reference"
+  },
+  {
+    "category": "architecture_models",
+    "title": "Window Frame",
+    "detail": "Ornate window frame model",
+    "image_url": "/static/assets/inspiration/architecture_models/architecture_models_10.jpg",
+    "source_url": "",
+    "source_title": "AI generated product reference"
+  }
+]

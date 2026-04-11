@@ -1,0 +1,173 @@
+PRINTMIND - NEW MACHINE SETUP (WINDOWS POWERSHELL)
+==================================================
+
+Use this file as the copy/paste checklist on a new PC.
+
+Prerequisites (install manually first)
+--------------------------------------
+1) Python 3.10.x (64-bit)
+2) Git for Windows
+3) PrusaSlicer
+4) Bambu Studio
+
+
+A) Create virtual environment and install dependencies
+------------------------------------------------------
+# If scripts are blocked in PowerShell:
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+
+cd C:\printmind
+py -3.10 -m venv venv310
+.\venv310\Scripts\Activate.ps1
+
+python -m pip install --upgrade pip setuptools wheel
+
+# Install GPU PyTorch (recommended for fast generation)
+pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu126
+
+# Install local Shap-E package from this repo
+pip install -e .\shap-e
+
+# Install backend deps
+pip install -r .\printmind_app\backend\requirements.txt
+
+# Optional sanity checks
+python -c "import torch; print('cuda=', torch.cuda.is_available()); print(torch.cuda.get_device_name(0) if torch.cuda.is_available() else 'NO_GPU')"
+python -c "import shap_e, fastapi, trimesh, bambulabs_api; print('python deps OK')"
+
+
+B) Set persistent environment variables (EDIT VALUES)
+-----------------------------------------------------
+# Core slicer paths
+setx PRUSA_SLICER_CONSOLE "C:\Program Files\Prusa3D\PrusaSlicer\prusa-slicer-console.exe"
+setx PRUSA_PROFILE_INI "C:\printmind\printmind_app\backend\prusaconfig.ini"
+setx SLICE_DIR "C:\printmind\printmind_app\runs\_slices"
+
+# Printer 1 (required)
+setx PRINTER_1_NAME "BRIDGE2"
+setx PRINTER_1_IP "192.168.33.140"
+setx PRINTER_1_ACCESS_CODE "REPLACE_WITH_8_CHAR_ACCESS_CODE"
+setx PRINTER_1_SERIAL "REPLACE_WITH_PRINTER_SERIAL"
+
+# Printer 2 (optional)
+setx PRINTER_2_NAME "BRIDGE1"
+setx PRINTER_2_IP ""
+setx PRINTER_2_ACCESS_CODE ""
+setx PRINTER_2_SERIAL ""
+
+# Bambu Studio path (optional override; defaults usually work)
+setx BAMBU_STUDIO_EXE "C:\Program Files\Bambu Studio\bambu-studio.exe"
+setx BAMBU_SYSTEM_ROOT "%APPDATA%\BambuStudio\system\BBL"
+
+# Optional explicit JSON overrides (normally not needed)
+# setx BAMBU_MACHINE_JSON "C:\Users\<USER>\AppData\Roaming\BambuStudio\system\BBL\machine\Bambu Lab X1 Carbon 0.4 nozzle.json"
+# setx BAMBU_PROCESS_DECORATIVE_JSON "C:\Users\<USER>\AppData\Roaming\BambuStudio\system\BBL\process\0.16mm Optimal @BBL X1C.json"
+# setx BAMBU_PROCESS_DURABLE_JSON "C:\Users\<USER>\AppData\Roaming\BambuStudio\system\BBL\process\0.20mm Strength @BBL X1C.json"
+# setx BAMBU_PROCESS_DRAFT_JSON "C:\Users\<USER>\AppData\Roaming\BambuStudio\system\BBL\process\0.24mm Draft @BBL X1C.json"
+# setx BAMBU_FILAMENT_PLA_JSON "C:\Users\<USER>\AppData\Roaming\BambuStudio\system\BBL\filament\Bambu PLA Basic @BBL X1C.json"
+# setx BAMBU_FILAMENT_PLACF_JSON "C:\Users\<USER>\AppData\Roaming\BambuStudio\system\BBL\filament\Bambu PLA-CF @BBL X1C.json"
+# setx BAMBU_FILAMENT_ABS_JSON "C:\Users\<USER>\AppData\Roaming\BambuStudio\system\BBL\filament\Bambu ABS @BBL X1C.json"
+
+IMPORTANT:
+- Close all terminals after setx.
+- Open new terminals so env vars are loaded.
+
+
+C) Run backend server (Terminal 1)
+----------------------------------
+cd C:\printmind
+.\venv310\Scripts\Activate.ps1
+cd .\printmind_app\backend
+uvicorn main:app --host 0.0.0.0 --port 8000
+
+
+D) Quick health checks (Terminal 2)
+-----------------------------------
+cd C:\printmind
+.\venv310\Scripts\Activate.ps1
+
+curl.exe http://localhost:8000/api/health
+curl.exe http://localhost:8000/api/printers
+
+
+E) Generate model -> estimate -> send print (Terminal 2)
+--------------------------------------------------------
+# 1) Generate STL from prompt
+$genBody = @{
+  prompt = "A smooth rounded vase with narrow neck"
+  quality_preset = "balanced"
+} | ConvertTo-Json
+
+$gen = Invoke-RestMethod -Uri "http://localhost:8000/api/generate" -Method Post -ContentType "application/json" -Body $genBody
+$gen | ConvertTo-Json -Depth 8
+
+# 2) Estimate print first
+$estBody = @{
+  stl_path = $gen.stl_path
+  printer_name = "BRIDGE2"
+  mode = "decorative"
+  auto_start = $false
+  use_ams = $true
+  ams_slot = 3
+  bed_leveling = $true
+  flow_cali = $true
+  vibration_cali = $true
+  layer_inspect = $false
+  timelapse = $false
+  bed_type = "Textured PEI Plate"
+  nozzle_mm = 0.4
+  nozzle_type = "hardened_steel"
+  support_mode = "auto"
+  support_type = "tree(auto)"
+  support_on_build_plate_only = $false
+} | ConvertTo-Json
+
+$est = Invoke-RestMethod -Uri "http://localhost:8000/api/slice_estimate" -Method Post -ContentType "application/json" -Body $estBody
+$est | ConvertTo-Json -Depth 8
+
+# 3) Send + auto-start print
+$printBody = @{
+  stl_path = $gen.stl_path
+  printer_name = "BRIDGE2"
+  mode = "decorative"
+  auto_start = $true
+  use_ams = $true
+  ams_slot = 3
+  bed_leveling = $true
+  flow_cali = $true
+  vibration_cali = $true
+  layer_inspect = $false
+  timelapse = $false
+  bed_type = "Textured PEI Plate"
+  nozzle_mm = 0.4
+  nozzle_type = "hardened_steel"
+  support_mode = "auto"
+  support_type = "tree(auto)"
+  support_on_build_plate_only = $false
+} | ConvertTo-Json
+
+$res = Invoke-RestMethod -Uri "http://localhost:8000/api/slice_send" -Method Post -ContentType "application/json" -Body $printBody
+$res | ConvertTo-Json -Depth 10
+
+# 4) Monitor status
+1..20 | ForEach-Object {
+  $s = Invoke-RestMethod "http://localhost:8000/api/printer_status?printer_name=BRIDGE2"
+  "{0} state={1} pct={2}% rem={3}m err={4} task={5}" -f (Get-Date -Format "HH:mm:ss"), $s.gcode_state, $s.percent, $s.remaining_minutes, $s.print_error_hex, $s.subtask_name
+  Start-Sleep -Seconds 2
+}
+
+
+F) Useful recovery commands
+---------------------------
+# Stop current job
+$ctl = @{ printer_name = "BRIDGE2" } | ConvertTo-Json
+Invoke-RestMethod -Uri "http://localhost:8000/api/printer_stop" -Method Post -ContentType "application/json" -Body $ctl | ConvertTo-Json -Depth 10
+
+# Resume current job
+Invoke-RestMethod -Uri "http://localhost:8000/api/printer_resume" -Method Post -ContentType "application/json" -Body $ctl | ConvertTo-Json -Depth 10
+
+
+G) Temporary (session-only) env var override
+--------------------------------------------
+# Use this if you do NOT want to persist with setx:
+$env:PRINTER_1_ACCESS_CODE = "REPLACE_WITH_8_CHAR_ACCESS_CODE"
